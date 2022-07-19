@@ -13,5 +13,14 @@ public class Palindrome {
 		} else {
 			System.out.println("Bukan Palindrome");
 		}
+
+//		ArrayList<String> cities = new ArrayList<String>();
+//
+//		cities.add("input");
+//		cities.add("input");
+//
+//		cities.forEach(city -> {
+//
+//		});
 	}
 }
