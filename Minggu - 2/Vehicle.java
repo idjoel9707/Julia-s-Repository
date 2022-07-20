@@ -8,9 +8,7 @@ class Vehicle implements VehicleSpecialActions{
     private String color;
     private int price;
 
-    public Vehicle(){
-
-    }
+    public Vehicle(){}
 
     public Vehicle(String brand, String color, int price){
         this.brand = brand;
@@ -27,16 +25,29 @@ class Vehicle implements VehicleSpecialActions{
     public void setPrice(int price){
         this.price = price;
     }
+    public void getBrand(){
+        return this.brand;
+    }
+    public void getColor(){
+        return this.color;
+    }
+    public void getPrice(){
+        return this.price;
+    }
     @Override
     public void doAutoPark(){
-        System.out.println("Automated parking is activated ...")
+        System.out.println("Automated parking is activated ...");
     }
     @Override
     public void openSunRoof(){
-        System.out.println("Sun roof is activated ...")
+        System.out.println("Sun roof is activated ...");
     }
 }
 
 public class Showroom {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle("suzuki", "black", 1230000);
 
+        System.out.println(vehicle);
+    }
 }

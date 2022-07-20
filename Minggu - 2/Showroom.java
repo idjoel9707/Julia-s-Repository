@@ -1,34 +1,53 @@
-public class Showroom{
-    public static void main(String[] args) {
-        Vehicle mobil = new Vehicle();
-        mobil.setBrand = "Suzuki";
-        mobil.setName = "MobIL";
+interface VehicleSpecialActions{
+    public void doAutoPark();
+    public void openSunRoof();
+}
 
-        System.out.println("brand : " + mobil.getBrand());
+class Vehicle implements VehicleSpecialActions{
+    private String brand;
+    private String color;
+    private int price;
+
+    public Vehicle(){}
+
+    public Vehicle(String brand, String color, int price){
+        this.brand = brand;
+        this.color = color;
+        this.price = price;
+    }
+
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
+    public void setColor(String color){
+        this.color = color;
+    }
+    public void setPrice(int price){
+        this.price = price;
+    }
+    public void getBrand(){
+        return brand;
+    }
+    public void getColor(){
+        return color;
+    }
+    public void getPrice(){
+        return this.price;
+    }
+    @Override
+    public void doAutoPark(){
+        System.out.println("Automated parking is activated ...");
+    }
+    @Override
+    public void openSunRoof(){
+        System.out.println("Sun roof is activated ...");
     }
 }
-public class Vehicle{
-    private String brand;
-    private String name;
 
-    public Kendaraan(String brand, String name){
-        this.brand = brand;
-        this.name = name;
-    }
+public class Showroom {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle("suzuki", "black", 1230000);
 
-    public String setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String setName(String name) {
-        this.name = name;
-    }
-
-    public String getBrand() {
-        return this.brand;
-    }
-
-    public String getName() {
-        return this.name;
+        System.out.println(vehicle);
     }
 }
